@@ -1,0 +1,23 @@
+CREATE TABLE estoque (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    livro_id INT,
+    quantidade INT NOT NULL,
+    FOREIGN KEY (livro_id) REFERENCES livros(id)
+);
+
+INSERT INTO estoque (livro_id, quantidade) VALUES
+(1, 10),   
+(2, 5),    
+(3, 15);  
+
+SELECT quantidade
+FROM estoque
+WHERE livro_id = 1;  
+
+UPDATE estoque
+SET quantidade = quantidade + 5
+WHERE livro_id = 1;             
+
+UPDATE estoque
+SET quantidade = 20  
+WHERE livro_id = 1; 
